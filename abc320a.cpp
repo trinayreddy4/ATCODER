@@ -14,16 +14,10 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
-	
-	for(auto &&i:a)
-	in>>i;
-	
-	sort(a.begin(),a.end());
-	
-	ou<<(a[0]+a[1])<<nl;
-	
-	
+	lli a,b;
+	in>>a>>b;
+	lli c=pow(a,b)+pow(b,a);
+	ou<<c;
 }
 
 

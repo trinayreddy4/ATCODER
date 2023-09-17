@@ -14,16 +14,10 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
+	int n;
+	in>>n;
 	
-	for(auto &&i:a)
-	in>>i;
-	
-	sort(a.begin(),a.end());
-	
-	ou<<(a[0]+a[1])<<nl;
-	
-	
+	ou<<"ABC"<<n<<nl;
 }
 
 

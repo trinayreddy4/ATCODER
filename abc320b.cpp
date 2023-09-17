@@ -14,16 +14,27 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
+	string s;
+	in>>s;
 	
-	for(auto &&i:a)
-	in>>i;
-	
-	sort(a.begin(),a.end());
-	
-	ou<<(a[0]+a[1])<<nl;
-	
-	
+	int n=s.length();
+	int siz=INT_MIN;
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			string temp=s.substr(i,j+1);
+			string temp2=temp;
+			reverse(temp.begin(),temp.end());
+			if(temp==temp2)
+			{
+//				ou<<temp.length()<<nl;
+//				ou<<temp<<nl;
+				siz=max(siz,(int)temp.length());
+			}
+		}
+	}
+	ou<<siz<<nl;
 }
 
 

@@ -14,15 +14,40 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
+	int n,m;
+	in>>n>>m;
 	
-	for(auto &&i:a)
-	in>>i;
+	vi t(m),w(m),s(m);
+	vi gc(n,0);
+	for(int i=0;i<m;i++)
+	{
+		in>>t[i]>>w[i]>>s[i];
+	}
+	vi ans(n,0);
+	for(int i=0;i<m;i++)
+	{
+		int time=t[i];
+		int avb=-1;
+		for(int i=n-1;i>=0;i--)
+		{
+			if(gc[i]<=time)
+			{
+				avb=i;
+				break;
+			}
+		}
+		if(avb!=-1)
+		{
+			ans[avb]+=w[i];
+			gc[avb]=t[i]+s[i];
+		}
+		
+	}
 	
-	sort(a.begin(),a.end());
-	
-	ou<<(a[0]+a[1])<<nl;
-	
+	for(int i=n-1;i>=0;i--)
+	{
+		ou<<ans[i]<<nl;
+	}
 	
 }
 
