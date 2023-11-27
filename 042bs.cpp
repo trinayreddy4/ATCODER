@@ -15,29 +15,20 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
-	int c5=0,c7=0;
+	int n,l;
+	in>>n>>l;
+	
+	vs a(n);
+	
 	for(auto &i:a)
 	{
 		in>>i;
-		
-		if(i==5)
-		{
-			c5++;
-		}
-		else if(i==7)
-		{
-			c7++;
-		}
 	}
 	
-	if(c5==2&&c7==1)
+	sort(a.begin(),a.end());
+	for(auto i:a)
 	{
-		yes	
-	}	
-	else
-	{
-		no
+		ou<<i;
 	}
 }
 

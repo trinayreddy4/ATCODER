@@ -15,30 +15,31 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
-	int c5=0,c7=0;
+	int n,m;
+	in>>n>>m;
+	
+	vi a(n);
+	
 	for(auto &i:a)
+	in>>i;
+	
+	
+	sort(a.begin(),a.end());
+	int ans=-1;
+	for(int i=0;i<n;i++)
 	{
-		in>>i;
+		int t=a[i];
 		
-		if(i==5)
-		{
-			c5++;
-		}
-		else if(i==7)
-		{
-			c7++;
-		}
+		int maxe=t+m;
+		
+		auto it=upper_bound(a.begin(),a.end(),maxe-1);
+		
+		int gif=it-(a.begin()+i);
+//		ou<<t<<" "<<maxe<<" "<<gif<<nl;
+		ans=max(ans,gif);
 	}
 	
-	if(c5==2&&c7==1)
-	{
-		yes	
-	}	
-	else
-	{
-		no
-	}
+	ou<<ans<<nl;
 }
 
 

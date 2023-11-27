@@ -15,30 +15,33 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
-	int c5=0,c7=0;
-	for(auto &i:a)
+	int n;
+	in>>n;
+	
+	vector<pair<int,int>>v;
+	
+	for(int i=0;i<n;i++)
 	{
-		in>>i;
+		int w,x;
+		in>>w>>x;
 		
-		if(i==5)
-		{
-			c5++;
-		}
-		else if(i==7)
-		{
-			c7++;
-		}
+		v.push_back({w,x});
 	}
 	
-	if(c5==2&&c7==1)
+	vi a;
+	int ans=-1;
+	for(int i=9;i<=17;i++)
 	{
-		yes	
-	}	
-	else
-	{
-		no
+		int temp=0;
+		for(int j=0;j<n;j++)
+		if((v[j].second+i)%24<=17 && (v[j].second+i)%24>=9)
+		{
+			temp+=v[j].first;
+		}
+
+		ans=max(ans,temp);
 	}
+	ou<<ans<<nl;
 }
 
 

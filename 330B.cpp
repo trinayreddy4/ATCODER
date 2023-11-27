@@ -15,30 +15,27 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
-	int c5=0,c7=0;
+	int n,l,r;
+	in>>n>>l>>r;
+	
+	vi a(n);
+	
 	for(auto &i:a)
 	{
 		in>>i;
 		
-		if(i==5)
+		if(i<r)
 		{
-			c5++;
-		}
-		else if(i==7)
+			ou<<l<<" ";	
+		}	
+		else
 		{
-			c7++;
+			ou<<r<<" ";
 		}
 	}
 	
-	if(c5==2&&c7==1)
-	{
-		yes	
-	}	
-	else
-	{
-		no
-	}
+	
+	
 }
 
 

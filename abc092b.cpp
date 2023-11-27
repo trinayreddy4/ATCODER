@@ -5,7 +5,6 @@
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 #define yes ou<<"YES"<<nl;
 #define no ou<<"NO"<<nl;
-#define all(arr) arr.begin(),arr.end()
 using ll=long long;
 using lli=long long int;
 using namespace std;
@@ -15,31 +14,30 @@ typedef vector<string> vs;
 int main()
 {
     fastread();
-	vi a(3);
-	int c5=0,c7=0;
-	for(auto &i:a)
+	int n;
+	in>>n;
+	int d,x;
+	in>>d>>x;
+	
+	vi a(n);
+	
+	for(auto &&i:a)
 	{
 		in>>i;
-		
-		if(i==5)
+	}
+	int sum=0;
+	for(int i=0;i<n;i++)
+	{
+		int t=a[i];
+//		ou<<t<<nl;
+		for(int j=1;j<=d;j+=t)
 		{
-			c5++;
-		}
-		else if(i==7)
-		{
-			c7++;
+//			ou<<j<<nl;
+			sum++;
 		}
 	}
+	ou<<sum+x<<nl;
 	
-	if(c5==2&&c7==1)
-	{
-		yes	
-	}	
-	else
-	{
-		no
-	}
 }
-
 
 

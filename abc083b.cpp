@@ -5,41 +5,39 @@
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 #define yes ou<<"YES"<<nl;
 #define no ou<<"NO"<<nl;
-#define all(arr) arr.begin(),arr.end()
 using ll=long long;
 using lli=long long int;
 using namespace std;
 typedef vector<int> vi;
 typedef vector<float> vf;
 typedef vector<string> vs;
+int sum(string s)
+{
+	int su=0;
+	for(int i=0;i<s.length();i++)
+	{
+		su=su+(int)s[i]-'0';
+	}
+	return su;
+}
 int main()
 {
     fastread();
-	vi a(3);
-	int c5=0,c7=0;
-	for(auto &i:a)
+	int n,a,b;
+	in>>n>>a>>b;
+	int ans=0;
+//	ou<<sum("14")<<nl;
+	for(int i=1;i<=n;i++)
 	{
-		in>>i;
-		
-		if(i==5)
+		string s=to_string(i);
+		int twmp=sum(s);
+//		ou<<twmp<<nl;
+		if(twmp>=a&&twmp<=b)
 		{
-			c5++;
-		}
-		else if(i==7)
-		{
-			c7++;
+			ans+=i;
 		}
 	}
-	
-	if(c5==2&&c7==1)
-	{
-		yes	
-	}	
-	else
-	{
-		no
-	}
+	ou<<ans<<nl;
 }
-
 
 

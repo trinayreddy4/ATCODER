@@ -5,7 +5,6 @@
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 #define yes ou<<"YES"<<nl;
 #define no ou<<"NO"<<nl;
-#define all(arr) arr.begin(),arr.end()
 using ll=long long;
 using lli=long long int;
 using namespace std;
@@ -16,30 +15,34 @@ int main()
 {
     fastread();
 	vi a(3);
-	int c5=0,c7=0;
+	int k;
+	
 	for(auto &i:a)
 	{
 		in>>i;
-		
-		if(i==5)
+	}
+	in>>k;
+	int maxe=-1,maxi=-1;
+	for(int i=0;i<3;i++)
+	{
+		if(a[i]>maxe)
 		{
-			c5++;
-		}
-		else if(i==7)
-		{
-			c7++;
+			maxe=a[i];
+			maxi=i;
 		}
 	}
 	
-	if(c5==2&&c7==1)
+	int sum=2*k*maxe;
+	
+	for(int i=0;i<3;i++)
 	{
-		yes	
-	}	
-	else
-	{
-		no
+		if(i!=maxi)
+		{
+			sum+=a[i];
+		}
 	}
+	
+	ou<<sum<<nl;
 }
-
 
 
